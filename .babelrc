@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "@babel/preset-react", // React のコンパイル
+    "@babel/preset-typescript" // TypeScript のコンパイル
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread" // スプレッド構文
+  ]
+}
