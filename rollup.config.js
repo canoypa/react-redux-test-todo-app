@@ -9,7 +9,7 @@ export default {
   input: "src/index.tsx",
 
   output: {
-    dir: "build",
+    dir: "docs",
     format: "es",
     sourcemap: true,
   },
@@ -25,6 +25,6 @@ export default {
     resolve(),
     commonjs({ extensions: [".js", ".ts", ".tsx"] }),
 
-    serve("build"),
+    serve("docs"),
   ],
 };
