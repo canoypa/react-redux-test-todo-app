@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c -w"
   },
   "dependencies": {
     "react": "^16.13.1",
