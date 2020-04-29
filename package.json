@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "build": "rollup -c"
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
