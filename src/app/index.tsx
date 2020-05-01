@@ -10,6 +10,10 @@ const App: React.FC = () => {
 
   const handler = {
     addTodo: (todo: TodoType) => setTodo(new Map(todoList.set(todo.id, todo))),
+    deleteTodo: (id: number) => {
+      todoList.delete(id);
+      setTodo(new Map(todoList));
+    },
     updateTodo: (todo: TodoType) =>
       setTodo(new Map(todoList.set(todo.id, todo))),
   };
@@ -22,6 +26,7 @@ const App: React.FC = () => {
         filter={filter}
         todoList={todoList}
         updateTodo={handler.updateTodo}
+        deleteTodo={handler.deleteTodo}
       ></TodoList>
     </React.Fragment>
   );

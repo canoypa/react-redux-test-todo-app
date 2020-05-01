@@ -6,9 +6,15 @@ type Props = {
   todoList: TodoListType;
   filter: filterType;
   updateTodo: React.Dispatch<TodoType>;
+  deleteTodo: React.Dispatch<number>;
 };
 
-const TodoList: React.FC<Props> = ({ todoList, filter, updateTodo }) => {
+const TodoList: React.FC<Props> = ({
+  todoList,
+  filter,
+  updateTodo,
+  deleteTodo,
+}) => {
   const todoListArr = [...todoList.values()];
 
   const filteredTodoList = todoListArr.filter((todo) => {
@@ -20,7 +26,12 @@ const TodoList: React.FC<Props> = ({ todoList, filter, updateTodo }) => {
   return (
     <ul>
       {filteredTodoList.map((todo) => (
-        <Todo key={todo.id} todo={todo} updateTodo={updateTodo} />
+        <Todo
+          key={todo.id}
+          todo={todo}
+          updateTodo={updateTodo}
+          deleteTodo={deleteTodo}
+        />
       ))}
     </ul>
   );
