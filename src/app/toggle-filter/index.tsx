@@ -7,27 +7,33 @@ type Props = {
   activeFilter: filterType;
 };
 
-const ToggleFilter: React.FC<Props> = ({ setFilter, activeFilter }) => (
-  <div>
-    <FilterLink
-      setFilter={setFilter}
-      filter={"ALL"}
-      active={activeFilter === "ALL"}
-      label="ALL"
-    />
-    <FilterLink
-      setFilter={setFilter}
-      filter={"COMPLETED"}
-      active={activeFilter === "COMPLETED"}
-      label="COMPLETED"
-    />
-    <FilterLink
-      setFilter={setFilter}
-      filter={"ACTIVE"}
-      active={activeFilter === "ACTIVE"}
-      label="ACTIVE"
-    />
-  </div>
-);
+const ToggleFilter: React.FC<Props> = ({ setFilter, activeFilter }) => {
+  const handler = {
+    setFilter: (filter: filterType) => setFilter(filter),
+  };
+
+  return (
+    <div>
+      <FilterLink
+        onClick={handler.setFilter}
+        filter={"ALL"}
+        active={activeFilter === "ALL"}
+        label="ALL"
+      />
+      <FilterLink
+        onClick={handler.setFilter}
+        filter={"COMPLETED"}
+        active={activeFilter === "COMPLETED"}
+        label="COMPLETED"
+      />
+      <FilterLink
+        onClick={handler.setFilter}
+        filter={"ACTIVE"}
+        active={activeFilter === "ACTIVE"}
+        label="ACTIVE"
+      />
+    </div>
+  );
+};
 
 export default ToggleFilter;
