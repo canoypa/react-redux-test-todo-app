@@ -17,19 +17,19 @@ const ToggleFilter: React.FC<Props> = ({ setFilter, activeFilter }) => {
       <FilterLink
         onClick={handler.setFilter}
         filter={"ALL"}
-        active={activeFilter === "ALL"}
+        disabled={activeFilter === "ALL"}
         label="ALL"
       />
       <FilterLink
         onClick={handler.setFilter}
         filter={"COMPLETED"}
-        active={activeFilter === "COMPLETED"}
+        disabled={activeFilter === "COMPLETED"}
         label="COMPLETED"
       />
       <FilterLink
         onClick={handler.setFilter}
         filter={"ACTIVE"}
-        active={activeFilter === "ACTIVE"}
+        disabled={activeFilter === "ACTIVE"}
         label="ACTIVE"
       />
     </div>
