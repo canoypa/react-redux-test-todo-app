@@ -1,18 +1,18 @@
 import React from "react";
-import { TodoListType, filterType, TodoType } from "../types";
+import { TodoListType, filterType } from "../types";
 import Todo from "./todo";
 
 type Props = {
   todoList: TodoListType;
   filter: filterType;
-  updateTodo: React.Dispatch<TodoType>;
+  toggleCompleted: (id: number, isCompleted: boolean) => void;
   deleteTodo: React.Dispatch<number>;
 };
 
 const TodoList: React.FC<Props> = ({
   todoList,
   filter,
-  updateTodo,
+  toggleCompleted,
   deleteTodo,
 }) => {
   const todoListArr = [...todoList.values()];
@@ -29,7 +29,7 @@ const TodoList: React.FC<Props> = ({
         <Todo
           key={todo.id}
           todo={todo}
-          updateTodo={updateTodo}
+          toggleCompleted={toggleCompleted}
           deleteTodo={deleteTodo}
         />
       ))}

@@ -14,8 +14,15 @@ const App: React.FC = () => {
       todoList.delete(id);
       setTodo(new Map(todoList));
     },
-    updateTodo: (todo: TodoType) =>
-      setTodo(new Map(todoList.set(todo.id, todo))),
+    toggleCompleted: (id: number, isCompleted: boolean) => {
+      const todo = todoList.get(id);
+
+      if (todo) {
+        setTodo(
+          new Map(todoList.set(todo.id, { ...todo, complete: isCompleted }))
+        );
+      }
+    },
   };
 
   return (
@@ -25,7 +32,7 @@ const App: React.FC = () => {
       <TodoList
         filter={filter}
         todoList={todoList}
-        updateTodo={handler.updateTodo}
+        toggleCompleted={handler.toggleCompleted}
         deleteTodo={handler.deleteTodo}
       ></TodoList>
     </React.Fragment>
