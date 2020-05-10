@@ -2,15 +2,20 @@ import React from "react";
 import { filterType } from "../../types";
 
 type Props = {
-  onClick: (filter: filterType) => void;
+  setFilter: (filter: filterType) => void;
   filter: filterType;
   disabled: boolean;
   label: string;
 };
 
-const FilterLink: React.FC<Props> = ({ onClick, filter, disabled, label }) => {
+const FilterLink: React.FC<Props> = ({
+  setFilter,
+  filter,
+  disabled,
+  label,
+}) => {
   const handler = {
-    onClick: () => onClick(filter),
+    onClick: () => setFilter(filter),
   };
 
   return (
