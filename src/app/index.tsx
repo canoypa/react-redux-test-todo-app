@@ -34,7 +34,7 @@ const App: React.FC = () => {
         todoList={todoList}
         toggleCompleted={handler.toggleCompleted}
         deleteTodo={handler.deleteTodo}
-      ></TodoList>
+      />
     </React.Fragment>
   );
 };
