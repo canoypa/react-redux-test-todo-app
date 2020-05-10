@@ -1,10 +1,10 @@
 import React from "react";
-import { filterType } from "../types";
+import { FilterType } from "../types";
 import FilterLink from "./filter-link";
 
 type Props = {
-  setFilter: (filter: filterType) => void;
-  activeFilter: filterType;
+  setFilter: (filter: FilterType) => void;
+  activeFilter: FilterType;
 };
 
 const ToggleFilter: React.FC<Props> = ({ setFilter, activeFilter }) => {

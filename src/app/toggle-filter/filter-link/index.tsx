@@ -1,9 +1,9 @@
 import React from "react";
-import { filterType } from "../../types";
+import { FilterType } from "../../types";
 
 type Props = {
-  setFilter: (filter: filterType) => void;
-  filter: filterType;
+  setFilter: (filter: FilterType) => void;
+  filter: FilterType;
   disabled: boolean;
   label: string;
 };

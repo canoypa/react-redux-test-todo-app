@@ -1,10 +1,10 @@
 import React from "react";
-import { TodoListType, filterType } from "../types";
+import { TodoListType, FilterType } from "../types";
 import Todo from "./todo";
 
 type Props = {
   todoList: TodoListType;
-  filter: filterType;
+  filter: FilterType;
   toggleCompleted: (id: number, isCompleted: boolean) => void;
   deleteTodo: (id: number) => void;
 };

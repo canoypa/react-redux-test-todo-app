@@ -1,12 +1,12 @@
 import React from "react";
 import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
-import { TodoListType, TodoType, filterType } from "./types";
+import { TodoListType, TodoType, FilterType } from "./types";
 import ToggleFilter from "./toggle-filter";
 
 const App: React.FC = () => {
   const [todoList, setTodo] = React.useState<TodoListType>(new Map());
-  const [filter, setFilter] = React.useState<filterType>("ALL");
+  const [filter, setFilter] = React.useState<FilterType>("ALL");
 
   const handler = {
     addTodo: (todo: TodoType) => setTodo(new Map(todoList.set(todo.id, todo))),
