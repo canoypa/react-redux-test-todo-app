@@ -2,7 +2,7 @@ import React from "react";
 import { TodoType } from "../types";
 
 type Props = {
-  addTodo: React.Dispatch<TodoType>;
+  addTodo: (todo: TodoType) => void;
 };
 
 const AddTodo: React.FC<Props> = ({ addTodo }) => {

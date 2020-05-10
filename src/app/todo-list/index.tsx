@@ -6,7 +6,7 @@ type Props = {
   todoList: TodoListType;
   filter: filterType;
   toggleCompleted: (id: number, isCompleted: boolean) => void;
-  deleteTodo: React.Dispatch<number>;
+  deleteTodo: (id: number) => void;
 };
 
 const TodoList: React.FC<Props> = ({

@@ -4,7 +4,7 @@ import { TodoType } from "../../types";
 type Props = {
   todo: TodoType;
   toggleCompleted: (id: number, isCompleted: boolean) => void;
-  deleteTodo: React.Dispatch<number>;
+  deleteTodo: (id: number) => void;
 };
 
 const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {

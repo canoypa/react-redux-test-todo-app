@@ -3,7 +3,7 @@ import { filterType } from "../types";
 import FilterLink from "./filter-link";
 
 type Props = {
-  setFilter: React.Dispatch<filterType>;
+  setFilter: (filter: filterType) => void;
   activeFilter: filterType;
 };
 
