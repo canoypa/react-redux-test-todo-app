@@ -1,4 +1,4 @@
-# React + Redux Test --> Todo App!!
+# React + Redux Test Todo App!!
 
 ⚛ < Read Me!!
 
