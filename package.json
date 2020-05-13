@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "rollup -c -w"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^16.13.1",
