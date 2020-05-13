@@ -28,7 +28,7 @@ const filterReducer = (
   }
 };
 
-export const appReducer = combineReducers({
+export default combineReducers({
   todo: todoReducer,
   filter: filterReducer,
 });
