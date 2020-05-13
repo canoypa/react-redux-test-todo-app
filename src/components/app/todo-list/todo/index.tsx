@@ -1,5 +1,8 @@
 import React from "react";
-import { TodoType } from "../../types";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
+import { toggleCompleted, deleteTodo } from "../../../../actions";
+import { TodoType } from "../../../../store/types";
 
 type Props = {
   todo: TodoType;
@@ -28,4 +31,11 @@ const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
   );
 };
 
-export default Todo;
+const stateToProps = (state: any) => ({});
+const dispatchToProps = (dispatch: Dispatch) => ({
+  toggleCompleted: (id: number, isCompleted: boolean) =>
+    dispatch(toggleCompleted(id, isCompleted)),
+  deleteTodo: (id: number) => dispatch(deleteTodo(id)),
+});
+
+export default connect(stateToProps, dispatchToProps)(Todo);

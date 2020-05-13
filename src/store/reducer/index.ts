@@ -1,4 +1,9 @@
-import { AddTodoType, ToggleCompletedType, SetFilterType } from "../../actions";
+import {
+  AddTodoType,
+  ToggleCompletedType,
+  SetFilterType,
+  DeleteTodoType,
+} from "../../actions";
 import { TodoAction, setFilterAction } from "../../actions/types";
 import { TodoStateType, FilterStateType } from "../types";
 import { combineReducers } from "redux";
@@ -15,6 +20,10 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
           state.set(todo.id, { ...todo, complete: action.data.isCompleted })
         );
       }
+      return state;
+    case DeleteTodoType:
+      state.delete(action.data);
+      return new Map(state);
     default:
       return state;
   }

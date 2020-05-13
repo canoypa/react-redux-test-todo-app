@@ -30,7 +30,7 @@ const AddTodo: React.FC<Props> = ({ addTodo }) => {
   );
 };
 
-const stateToProps = (state: any) => ({});
+const stateToProps = () => ({});
 const dispatchToProps = (dispatch: Redux.Dispatch) => ({
   addTodo: (text: string) => dispatch(addTodo(text)),
 });

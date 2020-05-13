@@ -1,35 +1,32 @@
 import React from "react";
-import { FilterType } from "../types";
 import FilterLink from "./filter-link";
+import { connect } from "react-redux";
+import { FilterStateType } from "../../../store/types";
 
 type Props = {
-  setFilter: (filter: FilterType) => void;
-  activeFilter: FilterType;
+  filter: FilterStateType;
 };
 
-const ToggleFilter: React.FC<Props> = ({ setFilter, activeFilter }) => {
+const ToggleFilter: React.FC<Props> = ({ filter }) => {
   return (
     <div>
+      <FilterLink filter="ALL" label="ALL" disabled={filter === "ALL"} />
       <FilterLink
-        setFilter={setFilter}
-        filter={"ALL"}
-        disabled={activeFilter === "ALL"}
-        label="ALL"
-      />
-      <FilterLink
-        setFilter={setFilter}
-        filter={"COMPLETED"}
-        disabled={activeFilter === "COMPLETED"}
+        filter="COMPLETED"
         label="COMPLETED"
+        disabled={filter === "COMPLETED"}
       />
       <FilterLink
-        setFilter={setFilter}
-        filter={"ACTIVE"}
-        disabled={activeFilter === "ACTIVE"}
+        filter="ACTIVE"
         label="ACTIVE"
+        disabled={filter === "ACTIVE"}
       />
     </div>
   );
 };
 
-export default ToggleFilter;
+const stateToProps = (state: any) => ({
+  filter: state.filter,
+});
+
+export default connect(stateToProps)(ToggleFilter);

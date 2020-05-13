@@ -1,9 +1,12 @@
 import React from "react";
-import { FilterType } from "../../types";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { setFilter } from "../../../../actions";
+import { FilterStateType } from "../../../../store/types";
 
 type Props = {
-  setFilter: (filter: FilterType) => void;
-  filter: FilterType;
+  setFilter: (filter: FilterStateType) => void;
+  filter: FilterStateType;
   disabled: boolean;
   label: string;
 };
@@ -25,4 +28,9 @@ const FilterLink: React.FC<Props> = ({
   );
 };
 
-export default FilterLink;
+const stateToProps = (state: any) => ({});
+const dispatchToProps = (dispatch: Dispatch) => ({
+  setFilter: (filter: FilterStateType) => dispatch(setFilter(filter)),
+});
+
+export default connect(stateToProps, dispatchToProps)(FilterLink);
