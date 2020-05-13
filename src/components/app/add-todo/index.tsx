@@ -1,8 +1,10 @@
 import React from "react";
-import { TodoType } from "../types";
+import Redux from "redux";
+import ReactRedux from "react-redux";
+import { addTodo } from "../../../actions";
 
 type Props = {
-  addTodo: (todo: TodoType) => void;
+  addTodo: (text: string) => void;
 };
 
 const AddTodo: React.FC<Props> = ({ addTodo }) => {
@@ -10,7 +12,7 @@ const AddTodo: React.FC<Props> = ({ addTodo }) => {
 
   const handler = {
     addTodo: (event: React.FormEvent) => {
-      addTodo({ id: Math.random(), text, complete: false });
+      addTodo(text);
       event.preventDefault();
     },
     setText: (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,4 +30,9 @@ const AddTodo: React.FC<Props> = ({ addTodo }) => {
   );
 };
 
-export default AddTodo;
+const stateToProps = (state: any) => ({});
+const dispatchToProps = (dispatch: Redux.Dispatch) => ({
+  addTodo: (text: string) => dispatch(addTodo(text)),
+});
+
+export default ReactRedux.connect(stateToProps, dispatchToProps)(AddTodo);
