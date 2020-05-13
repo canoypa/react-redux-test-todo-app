@@ -1,6 +1,7 @@
 import { AddTodoType, ToggleCompletedType, SetFilterType } from "../../actions";
 import { TodoAction, setFilterAction } from "../../actions/types";
 import { TodoStateType, FilterStateType } from "../types";
+import { combineReducers } from "redux";
 
 const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
   switch (action.type) {
@@ -27,7 +28,7 @@ const filterReducer = (
   }
 };
 
-export const appReducer = () => ({
+export const appReducer = combineReducers({
   todo: todoReducer,
   filter: filterReducer,
 });
