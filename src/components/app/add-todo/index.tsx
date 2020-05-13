@@ -1,6 +1,6 @@
 import React from "react";
 import Redux from "redux";
-import ReactRedux from "react-redux";
+import { connect } from "react-redux";
 import { addTodo } from "../../../actions";
 
 type Props = {
@@ -35,4 +35,4 @@ const dispatchToProps = (dispatch: Redux.Dispatch) => ({
   addTodo: (text: string) => dispatch(addTodo(text)),
 });
 
-export default ReactRedux.connect(stateToProps, dispatchToProps)(AddTodo);
+export default connect(stateToProps, dispatchToProps)(AddTodo);
