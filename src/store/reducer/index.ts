@@ -1,6 +1,6 @@
-import { AddTodoType, ToggleCompletedType, SetFilterType } from "../actions";
-import { TodoAction, setFilterAction } from "../actions/types";
-import { TodoStateType, FilterStateType } from "../store/types";
+import { AddTodoType, ToggleCompletedType, SetFilterType } from "../../actions";
+import { TodoAction, setFilterAction } from "../../actions/types";
+import { TodoStateType, FilterStateType } from "../types";
 
 const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
   switch (action.type) {
