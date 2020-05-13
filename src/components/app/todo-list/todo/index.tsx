@@ -32,8 +32,9 @@ const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
 };
 
 const dispatchToProps = (dispatch: Dispatch) => ({
-  toggleCompleted: (id: number, isCompleted: boolean) =>
-    dispatch(toggleCompleted(id, isCompleted)),
+  toggleCompleted: (id: number, isCompleted: boolean) => {
+    dispatch(toggleCompleted(id, isCompleted));
+  },
   deleteTodo: (id: number) => dispatch(deleteTodo(id)),
 });
 
