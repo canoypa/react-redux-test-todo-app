@@ -1,5 +1,5 @@
 import React from "react";
-import ReactRedux from "react-redux";
+import { Provider } from "react-redux";
 import store from "../../store";
 import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
@@ -28,7 +28,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <ReactRedux.Provider store={store}>
+    <Provider store={store}>
       <AddTodo addTodo={handler.addTodo} />
       <ToggleFilter setFilter={setFilter} activeFilter={filter} />
       <TodoList
@@ -37,7 +37,7 @@ const App: React.FC = () => {
         toggleCompleted={handler.toggleCompleted}
         deleteTodo={handler.deleteTodo}
       />
-    </ReactRedux.Provider>
+    </Provider>
   );
 };
 
