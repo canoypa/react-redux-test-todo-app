@@ -15,6 +15,8 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
           state.set(todo.id, { ...todo, complete: action.data.isCompleted })
         );
       }
+    default:
+      return state;
   }
 };
 
@@ -25,6 +27,8 @@ const filterReducer = (
   switch (action.type) {
     case SetFilterType:
       return action.data;
+    default:
+      return state;
   }
 };
 
