@@ -30,9 +30,8 @@ const AddTodo: React.FC<Props> = ({ addTodo }) => {
   );
 };
 
-const stateToProps = () => ({});
 const dispatchToProps = (dispatch: Redux.Dispatch) => ({
   addTodo: (text: string) => dispatch(addTodo(text)),
 });
 
-export default connect(stateToProps, dispatchToProps)(AddTodo);
+export default connect(null, dispatchToProps)(AddTodo);

@@ -28,9 +28,8 @@ const FilterLink: React.FC<Props> = ({
   );
 };
 
-const stateToProps = (state: any) => ({});
 const dispatchToProps = (dispatch: Dispatch) => ({
   setFilter: (filter: FilterStateType) => dispatch(setFilter(filter)),
 });
 
-export default connect(stateToProps, dispatchToProps)(FilterLink);
+export default connect(null, dispatchToProps)(FilterLink);

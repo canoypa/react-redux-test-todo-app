@@ -31,11 +31,10 @@ const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
   );
 };
 
-const stateToProps = (state: any) => ({});
 const dispatchToProps = (dispatch: Dispatch) => ({
   toggleCompleted: (id: number, isCompleted: boolean) =>
     dispatch(toggleCompleted(id, isCompleted)),
   deleteTodo: (id: number) => dispatch(deleteTodo(id)),
 });
 
-export default connect(stateToProps, dispatchToProps)(Todo);
+export default connect(null, dispatchToProps)(Todo);
