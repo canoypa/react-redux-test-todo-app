@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Todo from "./todo";
-import { TodoType } from "../../../store/types";
+import { TodoType, StoreType } from "../../../store/types";
 
 type Props = {
   todoList: Array<TodoType>;
@@ -17,7 +17,7 @@ const TodoList: React.FC<Props> = ({ todoList }) => {
   );
 };
 
-const stateToProps = (state: any) => {
+const stateToProps = (state: StoreType) => {
   const todoListArray = [...state.todo.values()];
   const filter = state.filter;
 

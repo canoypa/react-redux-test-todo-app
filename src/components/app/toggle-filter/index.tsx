@@ -1,7 +1,7 @@
 import React from "react";
 import FilterLink from "./filter-link";
 import { connect } from "react-redux";
-import { FilterStateType } from "../../../store/types";
+import { FilterStateType, StoreType } from "../../../store/types";
 
 type Props = {
   filter: FilterStateType;
@@ -25,7 +25,7 @@ const ToggleFilter: React.FC<Props> = ({ filter }) => {
   );
 };
 
-const stateToProps = (state: any) => ({
+const stateToProps = (state: StoreType) => ({
   filter: state.filter,
 });
 
