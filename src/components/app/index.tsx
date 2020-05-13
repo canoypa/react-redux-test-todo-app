@@ -3,8 +3,8 @@ import ReactRedux from "react-redux";
 import store from "../../store";
 import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
-import { TodoListType, TodoType, FilterType } from "./types";
 import ToggleFilter from "./toggle-filter";
+import { TodoListType, TodoType, FilterType } from "./types";
 
 const App: React.FC = () => {
   const [todoList, setTodo] = React.useState<TodoListType>(new Map());
