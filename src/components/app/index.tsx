@@ -1,4 +1,6 @@
 import React from "react";
+import ReactRedux from "react-redux";
+import store from "../../store";
 import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
 import { TodoListType, TodoType, FilterType } from "./types";
@@ -26,7 +28,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <React.Fragment>
+    <ReactRedux.Provider store={store}>
       <AddTodo addTodo={handler.addTodo} />
       <ToggleFilter setFilter={setFilter} activeFilter={filter} />
       <TodoList
@@ -35,7 +37,7 @@ const App: React.FC = () => {
         toggleCompleted={handler.toggleCompleted}
         deleteTodo={handler.deleteTodo}
       />
-    </React.Fragment>
+    </ReactRedux.Provider>
   );
 };
 
