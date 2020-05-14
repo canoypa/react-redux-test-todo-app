@@ -26,6 +26,7 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
       return new Map(state);
     default:
       const __check: never = action;
+      return state;
   }
 };
 
@@ -38,6 +39,7 @@ const filterReducer = (
       return action.data;
     default:
       const __check: never = action; // Fix: ？ エラー
+      return state;
   }
 };
 
