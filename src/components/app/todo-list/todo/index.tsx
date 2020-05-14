@@ -12,12 +12,8 @@ type Props = {
 
 const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
   const handler = {
-    toggleCompleted: () => {
-      toggleCompleted(todo.id, !todo.complete);
-    },
-    deleteTodo: () => {
-      deleteTodo(todo.id);
-    },
+    toggleCompleted: () => toggleCompleted(todo.id, !todo.complete),
+    deleteTodo: () => deleteTodo(todo.id),
   };
 
   return (
