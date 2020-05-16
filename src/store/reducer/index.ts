@@ -10,8 +10,8 @@ import { TodoStateType, FilterStateType } from "../types";
 import { combineReducers } from "redux";
 
 const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
-  state: TodoStateType = new Map(),
-  action: TodoAction
+  state = new Map(),
+  action
 ) => {
   switch (action.type) {
     case AddTodoType:
@@ -37,8 +37,8 @@ const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
 };
 
 const filterReducer: Redux.Reducer<FilterStateType, setFilterAction> = (
-  state: FilterStateType = "ALL",
-  action: setFilterAction
+  state = "ALL",
+  action
 ) => {
   if (action.type === SetFilterType) return action.data;
 };
