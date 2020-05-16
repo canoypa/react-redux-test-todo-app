@@ -1,3 +1,4 @@
+import Redux from "redux";
 import {
   AddTodoType,
   ToggleCompletedType,
@@ -8,7 +9,10 @@ import { TodoAction, setFilterAction } from "../../actions/types";
 import { TodoStateType, FilterStateType } from "../types";
 import { combineReducers } from "redux";
 
-const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
+const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
+  state: TodoStateType = new Map(),
+  action: TodoAction
+) => {
   switch (action.type) {
     case AddTodoType:
       return new Map(state.set(action.data.id, action.data));
@@ -32,7 +36,7 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
   }
 };
 
-const filterReducer = (
+const filterReducer: Redux.Reducer<FilterStateType, setFilterAction> = (
   state: FilterStateType = "ALL",
   action: setFilterAction
 ) => {
