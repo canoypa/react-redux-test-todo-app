@@ -37,7 +37,7 @@ const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
 };
 
 const filterReducer: Redux.Reducer<FilterStateType, setFilterAction> = (
-  state = "ALL",
+  _state = "ALL",
   action
 ) => {
   if (action.type === SetFilterType) return action.data;
