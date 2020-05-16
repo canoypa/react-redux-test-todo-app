@@ -37,14 +37,10 @@ const filterReducer = (
   state: FilterStateType = "ALL",
   action: setFilterAction
 ) => {
-  switch (action.type) {
-    case SetFilterType:
-      return action.data;
+  if (action.type === SetFilterType) return action.data;
 
-    default:
-      const __check: never = action; // Fix: ？ エラー
-      return state;
-  }
+  const __check: never = action; // Fix: ？ エラー
+  return state;
 };
 
 export default combineReducers({
