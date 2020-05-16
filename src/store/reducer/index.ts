@@ -12,6 +12,7 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
   switch (action.type) {
     case AddTodoType:
       return new Map(state.set(action.data.id, action.data));
+
     case ToggleCompletedType:
       const todo = state.get(action.data.id);
 
@@ -21,9 +22,11 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
         );
       }
       return state;
+
     case DeleteTodoType:
       state.delete(action.data);
       return new Map(state);
+
     default:
       const __check: never = action;
       return state;
@@ -37,6 +40,7 @@ const filterReducer = (
   switch (action.type) {
     case SetFilterType:
       return action.data;
+
     default:
       const __check: never = action; // Fix: ？ エラー
       return state;
