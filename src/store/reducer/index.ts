@@ -29,7 +29,6 @@ const todoReducer = (state: TodoStateType = new Map(), action: TodoAction) => {
 
     default:
       const __check: never = action;
-      return state;
   }
 };
 
@@ -38,8 +37,6 @@ const filterReducer = (
   action: setFilterAction
 ) => {
   if (action.type === SetFilterType) return action.data;
-
-  return state;
 };
 
 export default combineReducers({
