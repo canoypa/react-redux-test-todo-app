@@ -39,7 +39,6 @@ const filterReducer = (
 ) => {
   if (action.type === SetFilterType) return action.data;
 
-  const __check: never = action; // Fix: ？ エラー
   return state;
 };
 
