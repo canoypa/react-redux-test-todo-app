@@ -1,7 +1,5 @@
-export type TodoType = { readonly id: number; text: string; complete: boolean };
-
-export type TodoStateType = Map<number, TodoType> | undefined;
-export type FilterStateType = "ALL" | "COMPLETED" | "ACTIVE" | undefined;
+import { TodoStateType } from "./reducer/todo/types";
+import { FilterStateType } from "./reducer/filter/types";
 
 export type StoreType = {
   todo: TodoStateType;
