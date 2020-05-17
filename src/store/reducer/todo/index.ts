@@ -31,6 +31,7 @@ const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
 
     default:
       const __check: never = action;
+      return state;
   }
 };
 
