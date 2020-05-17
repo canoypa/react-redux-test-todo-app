@@ -1,7 +1,8 @@
 import React from "react";
 import FilterLink from "./filter-link";
 import { connect } from "react-redux";
-import { FilterStateType, StoreType } from "../../../store/types";
+import { StoreType } from "../../../store/types";
+import { FilterStateType } from "../../../store/reducer/filter/types";
 
 type Props = {
   filter: FilterStateType;

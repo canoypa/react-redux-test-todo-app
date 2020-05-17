@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { setFilter } from "../../../../actions/filter";
-import { FilterStateType } from "../../../../store/types";
+import { FilterStateType } from "../../../../store/reducer/filter/types";
 
 type Props = {
   setFilter: (filter: FilterStateType) => void;

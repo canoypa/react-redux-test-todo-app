@@ -5,7 +5,7 @@ import {
   DeleteTodoType,
 } from "../../../actions/todo";
 import { TodoAction } from "../../../actions/todo/types";
-import { TodoStateType } from "../../types";
+import { TodoStateType } from "./types";
 
 const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
   state = new Map(),

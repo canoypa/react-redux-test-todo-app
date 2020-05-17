@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import Todo from "./todo";
-import { TodoType, StoreType } from "../../../store/types";
+import { StoreType } from "../../../store/types";
+import { TodoType } from "../../../store/reducer/todo/types";
 
 type Props = {
   todoList: Array<TodoType>;
