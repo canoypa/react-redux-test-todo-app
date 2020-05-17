@@ -1,5 +1,4 @@
-import { addTodo, toggleCompleted, deleteTodo } from "./todo";
-import { setFilter } from "./filter";
+import { addTodo, toggleCompleted, deleteTodo } from ".";
 
 export type addTodoAction = ReturnType<typeof addTodo>;
 export type toggleCompletedAction = ReturnType<typeof toggleCompleted>;
@@ -9,4 +8,3 @@ export type TodoAction =
   | addTodoAction
   | toggleCompletedAction
   | DeleteTodoAction;
-export type setFilterAction = ReturnType<typeof setFilter>;
