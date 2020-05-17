@@ -1,22 +1,22 @@
-export const AddTodoType = Symbol("ADD_TODO");
-export const ToggleCompletedType = Symbol("TOGGLE_COMPLETED");
-export const DeleteTodoType = Symbol("DELETE_TODO");
+export const ADD_TODO = Symbol();
+export const TOGGLE_COMPLETED = Symbol();
+export const DELETE_TODO = Symbol();
 
 export const addTodo = (text: string) => {
   const todo = { id: Math.random(), text, complete: false };
 
   return {
-    type: AddTodoType,
+    type: ADD_TODO,
     data: todo,
   };
 };
 
 export const toggleCompleted = (id: number, isCompleted: boolean) => ({
-  type: ToggleCompletedType,
+  type: TOGGLE_COMPLETED,
   data: { id, isCompleted },
 });
 
 export const deleteTodo = (id: number) => ({
-  type: DeleteTodoType,
+  type: DELETE_TODO,
   data: id,
 });

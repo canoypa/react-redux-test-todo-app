@@ -1,9 +1,5 @@
 import Redux from "redux";
-import {
-  AddTodoType,
-  ToggleCompletedType,
-  DeleteTodoType,
-} from "../../../actions/todo";
+import { ADD_TODO, TOGGLE_COMPLETED, DELETE_TODO } from "../../../actions/todo";
 import { TodoAction } from "../../../actions/todo/types";
 import { TodoStateType } from "./types";
 
@@ -12,10 +8,10 @@ const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
   action
 ) => {
   switch (action.type) {
-    case AddTodoType:
+    case ADD_TODO:
       return new Map(state.set(action.data.id, action.data));
 
-    case ToggleCompletedType:
+    case TOGGLE_COMPLETED:
       const todo = state.get(action.data.id);
 
       if (todo) {
@@ -25,7 +21,7 @@ const todoReducer: Redux.Reducer<TodoStateType, TodoAction> = (
       }
       return state;
 
-    case DeleteTodoType:
+    case DELETE_TODO:
       state.delete(action.data);
       return new Map(state);
 

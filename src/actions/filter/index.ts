@@ -1,8 +1,8 @@
 import { FilterStateType } from "../../store/reducer/filter/types";
 
-export const SetFilterType = Symbol("SET_FILTER");
+export const SET_FILTER = Symbol("SET_FILTER");
 
 export const setFilter = (filter: FilterStateType) => ({
-  type: SetFilterType,
+  type: SET_FILTER,
   data: filter,
 });
