@@ -1,6 +1,6 @@
-export const ADD_TODO = Symbol();
-export const TOGGLE_COMPLETED = Symbol();
-export const DELETE_TODO = Symbol();
+export const ADD_TODO: "ADD_TODO" = "ADD_TODO";
+export const TOGGLE_COMPLETED: "TOGGLE_COMPLETED" = "TOGGLE_COMPLETED";
+export const DELETE_TODO: "DELETE_TODO" = "DELETE_TODO";
 
 export const addTodo = (text: string) => {
   const todo = { id: Math.random(), text, complete: false };
