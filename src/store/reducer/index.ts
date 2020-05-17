@@ -2,9 +2,9 @@ import Redux from "redux";
 import {
   AddTodoType,
   ToggleCompletedType,
-  SetFilterType,
   DeleteTodoType,
-} from "../../actions";
+} from "../../actions/todo";
+import { SetFilterType } from "../../actions/filter";
 import { TodoAction, setFilterAction } from "../../actions/types";
 import { TodoStateType, FilterStateType } from "../types";
 import { combineReducers } from "redux";

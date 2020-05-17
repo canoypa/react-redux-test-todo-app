@@ -1,7 +1,7 @@
 import React from "react";
 import Redux from "redux";
 import { connect } from "react-redux";
-import { addTodo } from "../../../actions";
+import { addTodo } from "../../../actions/todo";
 
 type Props = {
   addTodo: (text: string) => void;

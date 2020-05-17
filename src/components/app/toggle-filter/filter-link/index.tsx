@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { setFilter } from "../../../../actions";
+import { setFilter } from "../../../../actions/filter";
 import { FilterStateType } from "../../../../store/types";
 
 type Props = {

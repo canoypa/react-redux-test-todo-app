@@ -1,7 +1,7 @@
 import React from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
-import { toggleCompleted, deleteTodo } from "../../../../actions";
+import { toggleCompleted, deleteTodo } from "../../../../actions/todo";
 import { TodoType } from "../../../../store/types";
 
 type Props = {
