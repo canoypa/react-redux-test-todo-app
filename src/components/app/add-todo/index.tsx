@@ -1,18 +1,16 @@
 import React from "react";
-import Redux from "redux";
-import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../../../actions/todo";
+import { addTodoAction } from "../../../actions/todo/types";
 
-type Props = {
-  addTodo: (text: string) => void;
-};
-
-const AddTodo: React.FC<Props> = ({ addTodo }) => {
+const AddTodo: React.FC = () => {
+  const dispatch = useDispatch<Dispatch<addTodoAction>>();
   const [text, setText] = React.useState<string>("");
 
   const handler = {
     addTodo: (event: React.FormEvent) => {
-      addTodo(text);
+      dispatch(addTodo(text));
       event.preventDefault();
     },
     setText: (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +28,4 @@ const AddTodo: React.FC<Props> = ({ addTodo }) => {
   );
 };
 
-const dispatchToProps = (dispatch: Redux.Dispatch) => ({
-  addTodo: (text: string) => dispatch(addTodo(text)),
-});
-
-export default connect(null, dispatchToProps)(AddTodo);
+export default AddTodo;

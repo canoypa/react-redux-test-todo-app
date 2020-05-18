@@ -1,14 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import FilterLink from "./filter-link";
-import { connect } from "react-redux";
 import { StoreType } from "../../../store/types";
-import { FilterStateType } from "../../../store/reducer/filter/types";
 
-type Props = {
-  filter: FilterStateType;
-};
+const ToggleFilter: React.FC = () => {
+  const filter = useSelector((store: StoreType) => store.filter);
 
-const ToggleFilter: React.FC<Props> = ({ filter }) => {
   return (
     <div>
       <FilterLink filter="ALL" label="ALL" disabled={filter === "ALL"} />
@@ -26,8 +23,4 @@ const ToggleFilter: React.FC<Props> = ({ filter }) => {
   );
 };
 
-const stateToProps = (state: StoreType) => ({
-  filter: state.filter,
-});
-
-export default connect(stateToProps)(ToggleFilter);
+export default ToggleFilter;

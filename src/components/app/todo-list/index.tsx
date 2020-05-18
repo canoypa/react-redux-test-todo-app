@@ -1,14 +1,20 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Todo from "./todo";
 import { StoreType } from "../../../store/types";
-import { TodoType } from "../../../store/reducer/todo/types";
 
-type Props = {
-  todoList: Array<TodoType>;
-};
+const TodoList: React.FC = () => {
+  const todoListState = useSelector((store: StoreType) => store.todo);
+  const filter = useSelector((store: StoreType) => store.filter);
 
-const TodoList: React.FC<Props> = ({ todoList }) => {
+  const todoListArray = [...todoListState.values()];
+
+  const todoList = todoListArray.filter((todo) => {
+    if (filter === "COMPLETED" && todo.complete) return true;
+    if (filter === "ACTIVE" && !todo.complete) return true;
+    if (filter === "ALL") return true;
+  });
+
   return (
     <ul>
       {todoList.map((todo) => (
@@ -18,19 +24,4 @@ const TodoList: React.FC<Props> = ({ todoList }) => {
   );
 };
 
-const stateToProps = (state: StoreType) => {
-  const todoListArray = [...state.todo.values()];
-  const filter = state.filter;
-
-  const todoList = todoListArray.filter((todo) => {
-    if (filter === "COMPLETED" && todo.complete) return true;
-    if (filter === "ACTIVE" && !todo.complete) return true;
-    if (filter === "ALL") return true;
-  });
-
-  return {
-    todoList,
-  };
-};
-
-export default connect(stateToProps)(TodoList);
+export default TodoList;

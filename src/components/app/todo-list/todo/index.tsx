@@ -1,19 +1,25 @@
 import React from "react";
 import { Dispatch } from "redux";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleCompleted, deleteTodo } from "../../../../actions/todo";
 import { TodoType } from "../../../../store/reducer/todo/types";
+import {
+  toggleCompletedAction,
+  DeleteTodoAction,
+} from "../../../../actions/todo/types";
 
 type Props = {
   todo: TodoType;
-  toggleCompleted: (id: number, isCompleted: boolean) => void;
-  deleteTodo: (id: number) => void;
 };
 
-const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
+const Todo: React.FC<Props> = ({ todo }) => {
+  const dispatch = useDispatch<
+    Dispatch<toggleCompletedAction | DeleteTodoAction>
+  >();
+
   const handler = {
-    toggleCompleted: () => toggleCompleted(todo.id, !todo.complete),
-    deleteTodo: () => deleteTodo(todo.id),
+    toggleCompleted: () => dispatch(toggleCompleted(todo.id, !todo.complete)),
+    deleteTodo: () => dispatch(deleteTodo(todo.id)),
   };
 
   return (
@@ -27,11 +33,4 @@ const Todo: React.FC<Props> = ({ todo, toggleCompleted, deleteTodo }) => {
   );
 };
 
-const dispatchToProps = (dispatch: Dispatch) => ({
-  toggleCompleted: (id: number, isCompleted: boolean) => {
-    dispatch(toggleCompleted(id, isCompleted));
-  },
-  deleteTodo: (id: number) => dispatch(deleteTodo(id)),
-});
-
-export default connect(null, dispatchToProps)(Todo);
+export default Todo;

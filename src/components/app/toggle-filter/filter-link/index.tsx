@@ -1,24 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { useDispatch } from "react-redux";
 import { setFilter } from "../../../../actions/filter";
 import { FilterStateType } from "../../../../store/reducer/filter/types";
+import { setFilterAction } from "../../../../actions/filter/types";
 
 type Props = {
-  setFilter: (filter: FilterStateType) => void;
   filter: FilterStateType;
   disabled: boolean;
   label: string;
 };
 
-const FilterLink: React.FC<Props> = ({
-  setFilter,
-  filter,
-  disabled,
-  label,
-}) => {
+const FilterLink: React.FC<Props> = ({ filter, disabled, label }) => {
+  const dispatch = useDispatch<Dispatch<setFilterAction>>();
+
   const handler = {
-    onClick: () => setFilter(filter),
+    onClick: () => dispatch(setFilter(filter)),
   };
 
   return (
@@ -28,8 +25,4 @@ const FilterLink: React.FC<Props> = ({
   );
 };
 
-const dispatchToProps = (dispatch: Dispatch) => ({
-  setFilter: (filter: FilterStateType) => dispatch(setFilter(filter)),
-});
-
-export default connect(null, dispatchToProps)(FilterLink);
+export default FilterLink;
