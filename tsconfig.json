@@ -5,6 +5,7 @@
     "moduleResolution": "node", // 相対パスでないモジュールは node_modules から
     "esModuleInterop": true, // よくわからん commonjs モジュールを default import 出来るらしい？
     "jsx": "preserve",
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": ["src/@types", "node_modules/@types"]
   }
 }
