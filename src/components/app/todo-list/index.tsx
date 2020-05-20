@@ -1,11 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Todo from "./todo";
-import { StoreType } from "../../../store/types";
 
 const TodoList: React.FC = () => {
-  const todoListState = useSelector((store: StoreType) => store.todo);
-  const filter = useSelector((store: StoreType) => store.filter);
+  const todoListState = useSelector((store) => store.todo);
+  const filter = useSelector((store) => store.filter);
 
   const todoListArray = [...todoListState.values()];
 

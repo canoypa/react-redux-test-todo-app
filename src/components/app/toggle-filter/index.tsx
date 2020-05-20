@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import FilterLink from "./filter-link";
-import { StoreType } from "../../../store/types";
 
 const ToggleFilter: React.FC = () => {
-  const filter = useSelector((store: StoreType) => store.filter);
+  const filter = useSelector((store) => store.filter);
 
   return (
     <div>

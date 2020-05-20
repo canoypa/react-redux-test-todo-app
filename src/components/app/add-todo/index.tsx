@@ -1,11 +1,10 @@
 import React from "react";
-import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../../actions/todo";
 import { AddTodoAction } from "../../../actions/todo/types";
 
 const AddTodo: React.FC = () => {
-  const dispatch = useDispatch<Dispatch<AddTodoAction>>();
+  const dispatch = useDispatch<AddTodoAction>();
   const [text, setText] = React.useState<string>("");
 
   const handler = {

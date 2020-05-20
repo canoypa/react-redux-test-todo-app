@@ -13,9 +13,7 @@ type Props = {
 };
 
 const Todo: React.FC<Props> = ({ todo }) => {
-  const dispatch = useDispatch<
-    Dispatch<ToggleCompletedAction | DeleteTodoAction>
-  >();
+  const dispatch = useDispatch<ToggleCompletedAction | DeleteTodoAction>();
 
   const handler = {
     toggleCompleted: () => dispatch(toggleCompleted(todo.id, !todo.complete)),
