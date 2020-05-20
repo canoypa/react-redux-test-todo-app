@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { toggleCompleted, deleteTodo } from "../../../../actions/todo";
 import { TodoType } from "../../../../store/reducer/todo/types";
 import {
-  toggleCompletedAction,
+  ToggleCompletedAction,
   DeleteTodoAction,
 } from "../../../../actions/todo/types";
 
@@ -14,7 +14,7 @@ type Props = {
 
 const Todo: React.FC<Props> = ({ todo }) => {
   const dispatch = useDispatch<
-    Dispatch<toggleCompletedAction | DeleteTodoAction>
+    Dispatch<ToggleCompletedAction | DeleteTodoAction>
   >();
 
   const handler = {

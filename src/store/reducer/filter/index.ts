@@ -1,9 +1,9 @@
 import Redux from "redux";
 import { SET_FILTER } from "../../../actions/filter";
-import { setFilterAction } from "../../../actions/filter/types";
+import { SetFilterAction } from "../../../actions/filter/types";
 import { FilterStateType } from "./types";
 
-const filterReducer: Redux.Reducer<FilterStateType, setFilterAction> = (
+const filterReducer: Redux.Reducer<FilterStateType, SetFilterAction> = (
   state = "ALL",
   action
 ) => {
