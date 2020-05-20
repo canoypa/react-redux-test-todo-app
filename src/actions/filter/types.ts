@@ -1,3 +1,3 @@
 import { setFilter } from "../filter";
 
-export type setFilterAction = ReturnType<typeof setFilter>;
+export type SetFilterAction = ReturnType<typeof setFilter>;
