@@ -4,7 +4,7 @@ export type AddTodoAction = ReturnType<typeof addTodo>;
 export type ToggleCompletedAction = ReturnType<typeof toggleCompleted>;
 export type DeleteTodoAction = ReturnType<typeof deleteTodo>;
 
-export type TodoAction =
+export type TodoActions =
   | AddTodoAction
   | ToggleCompletedAction
   | DeleteTodoAction;
