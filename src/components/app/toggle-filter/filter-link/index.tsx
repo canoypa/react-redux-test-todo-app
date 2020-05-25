@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../../../actions/filter";
-import { FilterStateType } from "../../../../store/reducer/filter/types";
+import { FilterStateType } from "../../../../store/types";
 import { SetFilterAction } from "../../../../actions/filter/types";
 
 type Props = {

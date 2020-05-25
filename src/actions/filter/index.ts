@@ -1,4 +1,4 @@
-import { FilterStateType } from "../../store/reducer/filter/types";
+import { FilterStateType } from "../../store/types";
 
 export const SET_FILTER = "SET_FILTER" as const;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
 import { toggleCompleted, deleteTodo } from "../../../../actions/todo";
-import { TodoType } from "../../../../store/reducer/todo/types";
+import { TodoType } from "../../../../store/types";
 import {
   ToggleCompletedAction,
   DeleteTodoAction,
